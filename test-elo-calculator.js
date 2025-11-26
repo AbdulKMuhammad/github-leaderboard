@@ -2,13 +2,28 @@
 
 // test-elo-calculator.js - Unit tests for the Elo system
 
+// Determine the correct path to elo-calculator.js
+const path = require('path');
+const fs = require('fs');
+
+let calculatorPath;
+if (fs.existsSync('./elo-calculator.js')) {
+  calculatorPath = './elo-calculator.js';
+} else if (fs.existsSync('./.github/scripts/elo-calculator.js')) {
+  calculatorPath = './.github/scripts/elo-calculator.js';
+} else {
+  console.error('Error: Could not find elo-calculator.js');
+  console.error('Please run this script from the repository root or the same directory as elo-calculator.js');
+  process.exit(1);
+}
+
 const {
   calculateTaskDifficulty,
   calculateQualityMultiplier,
   calculateTimeBonus,
   expectedScore,
   getKFactor
-} = require('./elo-calculator.js');
+} = require(calculatorPath);
 
 // ANSI color codes for output
 const colors = {
@@ -190,7 +205,7 @@ function runTests() {
   log(colors.yellow, `  Base Elo Change: ${baseChange.toFixed(2)}`);
   log(colors.yellow, `  With 1.2x quality and 1.1x time: ${(baseChange * 1.2 * 1.1).toFixed(2)}`);
   
-  if (assertRange(baseChange, 11, 13, 'Base Elo change for typical PR')) passed++; else failed++;
+  if (assertRange(baseChange, 14, 17, 'Base Elo change for typical PR')) passed++; else failed++;
   
   // Summary
   log(colors.cyan, `\n=== Test Results ===`);

@@ -40,9 +40,9 @@ jobs:
             const fs = require('fs');
             const path = require('path');
             
-            // Import our Elo calculator
-            const script = fs.readFileSync('./.github/scripts/elo-calculator.js', 'utf8');
-            eval(script);
+            // Load the Elo calculator module
+            const eloCalculator = require('./.github/scripts/elo-calculator.js');
+            const { updateLeaderboard } = eloCalculator;
             
             const pr = context.payload.pull_request;
             const author = pr.user.login;
