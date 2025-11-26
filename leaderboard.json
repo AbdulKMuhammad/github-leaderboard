@@ -1,7 +1,23 @@
 {
-  "contributors": {},
-  "lastUpdated": "2024-01-01T00:00:00.000Z",
-  "totalPRs": 0,
+  "contributors": {
+    "AbdulKMuhammad": {
+      "elo": 1213,
+      "prs": 1,
+      "totalDifficulty": 1150,
+      "recentPRs": [
+        {
+          "number": 3,
+          "title": "Test workflow",
+          "eloChange": 13,
+          "difficulty": 1150,
+          "mergedAt": "2025-11-26T17:26:23Z",
+          "url": "https://github.com/AbdulKMuhammad/github-leaderboard/pull/3"
+        }
+      ]
+    }
+  },
+  "lastUpdated": "2025-11-26T17:26:37.932Z",
+  "totalPRs": 1,
   "metadata": {
     "startingElo": 1200,
     "version": "1.0.0",
