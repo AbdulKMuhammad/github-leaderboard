@@ -1,0 +1,10 @@
+{
+  "contributors": {},
+  "lastUpdated": "2024-01-01T00:00:00.000Z",
+  "totalPRs": 0,
+  "metadata": {
+    "startingElo": 1200,
+    "version": "1.0.0",
+    "description": "Elo-based contribution leaderboard tracking code quality and complexity"
+  }
+}
